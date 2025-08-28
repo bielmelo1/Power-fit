@@ -1,183 +1,245 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PowerFit Academia</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(135deg, #ff0000, #ff7300, #ffeb00);
-      color: white;
-      text-align: center;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mude seu Corpo em 30 Dias</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-    header {
-      padding: 20px 0;
-      background: rgba(0,0,0,0.7);
-      font-size: 2em;
-      font-weight: bold;
-      letter-spacing: 2px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+  body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(120deg, #ff6f61, #ffcc70, #6a82fb);
+    color: #fff;
+  }
 
-    nav a {
-      color: #ffeb00;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
+  header {
+    padding: 20px 0;
+    background: rgba(0,0,0,0.7);
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
 
-    nav a:hover {
-      color: #fff;
-    }
+  nav a {
+    color: #ffd700;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
 
-    .hero {
-      padding: 50px 20px;
-    }
+  nav a:hover {
+    color: #fff;
+  }
 
-    .hero h1 {
-      font-size: 3em;
-      text-shadow: 2px 2px 10px black;
-      margin-bottom: 20px;
-    }
+  .hero {
+    position: relative;
+    padding: 60px 20px;
+    background: url('https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+    text-shadow: 2px 2px 15px black;
+  }
 
-    .hero p {
-      font-size: 1.3em;
-      max-width: 600px;
-      margin: auto;
-      background: rgba(0,0,0,0.4);
-      padding: 15px;
-      border-radius: 15px;
-    }
+  .hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    animation: fadeInDown 1.5s;
+  }
 
-    .hero .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 15px 30px;
-      font-size: 1.2em;
-      background: #ffeb00;
-      color: black;
-      font-weight: bold;
-      border-radius: 10px;
-      text-decoration: none;
-      transition: transform 0.2s, background 0.3s;
-    }
+  .hero p {
+    font-size: 1.3em;
+    max-width: 600px;
+    margin: auto;
+    background: rgba(0,0,0,0.5);
+    padding: 15px;
+    border-radius: 15px;
+    animation: fadeInUp 1.5s;
+  }
 
-    .hero .btn:hover {
-      transform: scale(1.1);
-      background: #ffd700;
-    }
+  .hero .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background: #ffd700;
+    color: black;
+    font-weight: bold;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: transform 0.3s, background 0.3s;
+    animation: fadeIn 2s;
+  }
 
-    .treinos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 40px;
-    }
+  .hero .btn:hover {
+    transform: scale(1.1);
+    background: #fff700;
+  }
 
-    .card {
-      background: rgba(0,0,0,0.6);
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.7);
-      transition: transform 0.2s;
-    }
+  @keyframes fadeInDown {
+    from {opacity:0; transform: translateY(-50px);}
+    to {opacity:1; transform: translateY(0);}
+  }
 
-    .card:hover {
-      transform: scale(1.05);
-    }
+  @keyframes fadeInUp {
+    from {opacity:0; transform: translateY(50px);}
+    to {opacity:1; transform: translateY(0);}
+  }
 
-    .card h2 {
-      margin-bottom: 10px;
-      font-size: 1.5em;
-      color: #ffeb00;
-    }
+  @keyframes fadeIn {
+    from {opacity:0;}
+    to {opacity:1;}
+  }
 
-    .card p {
-      font-size: 1.1em;
-    }
+  .treinos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 50px;
+  }
 
-    #contato {
-      padding: 50px 20px;
-      background: rgba(0,0,0,0.5);
-    }
+  .card {
+    background: rgba(0,0,0,0.6);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.7);
+    transition: transform 0.4s, box-shadow 0.4s;
+    overflow: hidden;
+    position: relative;
+  }
 
-    footer {
-      background: black;
-      padding: 30px 20px;
-      margin-top: 40px;
-      font-size: 1em;
-    }
+  .card:hover {
+    transform: scale(1.05) rotate(-1deg);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.8);
+  }
 
-    footer a {
-      color: #ffeb00;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+  .card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.5s;
+  }
 
-    footer a:hover {
-      color: white;
-    }
-  </style>
+  .card:hover img {
+    transform: scale(1.1);
+  }
+
+  .card h2 {
+    margin-bottom: 10px;
+    font-size: 1.6em;
+    color: #ffd700;
+  }
+
+  .card p {
+    font-size: 1.1em;
+  }
+
+  #contato {
+    padding: 60px 20px;
+    background: rgba(0,0,0,0.5);
+    text-align: center;
+  }
+
+  #contato h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+
+  #contato p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+  }
+
+  #contato .btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 35px;
+    font-size: 1.2em;
+    background: #ffd700;
+    color: black;
+    font-weight: bold;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: transform 0.3s, background 0.3s;
+  }
+
+  #contato .btn:hover {
+    transform: scale(1.1);
+    background: #fff700;
+  }
+
+  footer {
+    background: black;
+    padding: 30px 20px;
+    font-size: 1em;
+  }
+
+  footer a {
+    color: #ffd700;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  footer a:hover {
+    color: white;
+  }
+
+</style>
 </head>
 <body>
 
-  <header>
-    💪 POWERFIT ACADEMIA
-    <nav>
-      <a href="#treinos">Treinos</a>
-      <a href="#contato">Contato</a>
-      <a href="https://instagram.com/" target="_blank">Instagram</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h1>Transforme Seu Corpo Agora!</h1>
-    <p>Treinos exclusivos para você ganhar força, resistência e autoestima.  
-    Venha descobrir o poder da sua melhor versão!</p>
-    <a href="#contato" class="btn">Inscreva-se</a>
-  </section>
-
-  <section class="treinos" id="treinos">
-    <div class="card">
-      <h2>🔥 Treino de Força</h2>
-      <p>Aumente sua massa muscular com exercícios intensos e progressivos.</p>
-    </div>
-    <div class="card">
-      <h2>⚡ HIIT</h2>
-      <p>Queime calorias rápido com treinos explosivos e de curta duração.</p>
-    </div>
-    <div class="card">
-      <h2>🏋️ Cross Training</h2>
-      <p>Variedade e intensidade para desafiar seus limites todos os dias.</p>
-    </div>
-    <div class="card">
-      <h2>🧘 Yoga & Alongamento</h2>
-      <p>Equilibre corpo e mente, aumentando flexibilidade e foco.</p>
-    </div>
-  </section>
-
-  <section id="contato">
-    <h2>📩 Contato</h2>
-    <p>Quer começar agora? Mande uma mensagem pelo WhatsApp ou email!</p>
-    <a href="https://wa.me/5594992940117" class="btn">WhatsApp</a>
-    <br><br>
-    <a href="mailto:nielzinnmiel@gmail.com" class="btn">Enviar E-mail</a>
-  </section>
-
-  <footer>
-    © 2025 PowerFit Academia | Treine forte, viva melhor!  
-    <br>
+<header>
+  💪 MUDE SEU CORPO EM 30 DIAS
+  <nav>
+    <a href="#treinos">Treinos</a>
+    <a href="#contato">Contato</a>
     <a href="https://instagram.com/" target="_blank">Instagram</a>
-    <a href="https://facebook.com/" target="_blank">Facebook</a>
-    <a href="mailto:nielzinnmiel@gmail.com">E-mail</a>
-  </footer>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Transforme Seu Corpo em Apenas 30 Dias!</h1>
+  <p>Treinos intensivos para você ganhar força, resistência e autoestima.  
+  Comece hoje a mudança que você sempre quis!</p>
+  <a href="#contato" class="btn">Inscreva-se Agora</a>
+</section>
+
+<section class="treinos" id="treinos">
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1598970434795-0c54fe7c0642?auto=format&fit=crop&w=800&q=80" alt="Treino de Força">
+    <h2>🔥 Treino de Força</h2>
+    <p>Ganhe massa muscular com exercícios intensos e progressivos.</p>
+  </div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=800&q=80" alt="HIIT">
+    <h2>⚡ HIIT</h2>
+    <p>Queime calorias rápido com treinos explosivos de alta intensidade.</p>
+  </div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1599058917213-73f11f3e63b5?auto=format&fit=crop&w=800&q=80" alt="Cross Training">
+    <h2>🏋️ Cross Training</h2>
+    <p>Variedade e intensidade para desafiar seus limites todos os dias.</p>
+  </div>
+</section>
+
+<section id="contato">
+  <h2>📩 Contato</h2>
+  <p>Mande uma mensagem e comece sua transformação hoje mesmo!</p>
+  <a href="https://wa.me/5594992940117" class="btn">WhatsApp</a>
+  <a href="mailto:nielzinnmiel@gmail.com" class="btn">Enviar E-mail</a>
+</section>
+
+<footer>
+  © 2025 Mude Seu Corpo em 30 Dias | Treine forte, viva melhor!  
+  <br>
+  <a href="https://instagram.com/" target="_blank">Instagram</a>
+  <a href="https://facebook.com/" target="_blank">Facebook</a>
+  <a href="mailto:nielzinnmiel@gmail.com">E-mail</a>
+</footer>
 
 </body>
 </html>
