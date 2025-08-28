@@ -14,11 +14,26 @@
     }
 
     header {
-      padding: 30px;
-      background: rgba(0,0,0,0.6);
+      padding: 20px 0;
+      background: rgba(0,0,0,0.7);
       font-size: 2em;
       font-weight: bold;
       letter-spacing: 2px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #ffeb00;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #fff;
     }
 
     .hero {
@@ -38,6 +53,24 @@
       background: rgba(0,0,0,0.4);
       padding: 15px;
       border-radius: 15px;
+    }
+
+    .hero .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background: #ffeb00;
+      color: black;
+      font-weight: bold;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: transform 0.2s, background 0.3s;
+    }
+
+    .hero .btn:hover {
+      transform: scale(1.1);
+      background: #ffd700;
     }
 
     .treinos {
@@ -69,24 +102,49 @@
       font-size: 1.1em;
     }
 
+    #contato {
+      padding: 50px 20px;
+      background: rgba(0,0,0,0.5);
+    }
+
     footer {
       background: black;
-      padding: 20px;
+      padding: 30px 20px;
       margin-top: 40px;
-      font-size: 0.9em;
+      font-size: 1em;
+    }
+
+    footer a {
+      color: #ffeb00;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      color: white;
     }
   </style>
 </head>
 <body>
-  <header>💪 POWERFIT ACADEMIA</header>
+
+  <header>
+    💪 POWERFIT ACADEMIA
+    <nav>
+      <a href="#treinos">Treinos</a>
+      <a href="#contato">Contato</a>
+      <a href="https://instagram.com/" target="_blank">Instagram</a>
+    </nav>
+  </header>
 
   <section class="hero">
     <h1>Transforme Seu Corpo Agora!</h1>
     <p>Treinos exclusivos para você ganhar força, resistência e autoestima.  
     Venha descobrir o poder da sua melhor versão!</p>
+    <a href="#contato" class="btn">Inscreva-se</a>
   </section>
 
-  <section class="treinos">
+  <section class="treinos" id="treinos">
     <div class="card">
       <h2>🔥 Treino de Força</h2>
       <p>Aumente sua massa muscular com exercícios intensos e progressivos.</p>
@@ -105,9 +163,22 @@
     </div>
   </section>
 
+  <section id="contato">
+    <h2>📩 Contato</h2>
+    <p>Quer começar agora? Mande uma mensagem pelo WhatsApp ou email!</p>
+    <a href="https://wa.me/5594992940117" class="btn">WhatsApp</a>
+    <br><br>
+    <a href="mailto:nielzinnmiel@gmail.com" class="btn">Enviar E-mail</a>
+  </section>
+
   <footer>
-    © 2025 PowerFit Academia | Treine forte, viva melhor!
+    © 2025 PowerFit Academia | Treine forte, viva melhor!  
+    <br>
+    <a href="https://instagram.com/" target="_blank">Instagram</a>
+    <a href="https://facebook.com/" target="_blank">Facebook</a>
+    <a href="mailto:nielzinnmiel@gmail.com">E-mail</a>
   </footer>
+
 </body>
 </html>
 
